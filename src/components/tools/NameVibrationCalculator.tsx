@@ -63,7 +63,7 @@ export const NameVibrationCalculator: React.FC<NameVibrationCalculatorProps> = (
   };
 
   return (
-    <div className="bg-[#10152A]/90 border border-[#C8A45D]/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm space-y-6">
+    <div className="bg-[#10152A]/90 border border-[#C8A45D]/30 rounded-2xl p-4 sm:p-6 lg:p-8 backdrop-blur-sm space-y-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-5">
         <div>
@@ -79,22 +79,22 @@ export const NameVibrationCalculator: React.FC<NameVibrationCalculatorProps> = (
         </div>
 
         {/* System Selector */}
-        <div className="inline-flex rounded-lg bg-[#080A14] p-1 border border-white/10 self-start sm:self-auto">
+        <div className="w-full sm:w-auto grid grid-cols-2 sm:inline-flex rounded-lg bg-[#080A14] p-1 border border-white/10 shrink-0">
           <button
             type="button"
             onClick={() => setSystem('chaldean')}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
+            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer text-center ${
               system === 'chaldean'
                 ? 'bg-[#C8A45D] text-[#080A14] font-semibold'
                 : 'text-[#9EA3B5] hover:text-[#F7F4EC]'
             }`}
           >
-            Chaldean (Vedic Sacred)
+            Chaldean (Vedic)
           </button>
           <button
             type="button"
             onClick={() => setSystem('pythagorean')}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
+            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer text-center ${
               system === 'pythagorean'
                 ? 'bg-[#C8A45D] text-[#080A14] font-semibold'
                 : 'text-[#9EA3B5] hover:text-[#F7F4EC]'
@@ -157,12 +157,12 @@ export const NameVibrationCalculator: React.FC<NameVibrationCalculatorProps> = (
               {result.breakdown.map((item, idx) => (
                 <div
                   key={`${item.letter}-${idx}`}
-                  className="flex flex-col items-center justify-center w-10 h-14 rounded-lg bg-[#080A14] border border-[#C8A45D]/25"
+                  className="flex flex-col items-center justify-center w-8 sm:w-10 h-12 sm:h-14 rounded-lg bg-[#080A14] border border-[#C8A45D]/25 shrink-0"
                 >
-                  <span className="font-serif text-base font-semibold text-[#F7F4EC]">
+                  <span className="font-serif text-sm sm:text-base font-semibold text-[#F7F4EC]">
                     {item.letter}
                   </span>
-                  <span className="font-mono text-xs text-[#C8A45D] mt-0.5">
+                  <span className="font-mono text-[10px] sm:text-xs text-[#C8A45D] mt-0.5">
                     {item.value}
                   </span>
                 </div>

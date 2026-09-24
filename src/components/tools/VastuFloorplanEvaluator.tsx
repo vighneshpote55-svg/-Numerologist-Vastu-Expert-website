@@ -188,7 +188,7 @@ export const VastuFloorplanEvaluator: React.FC<VastuFloorplanEvaluatorProps> = (
   };
 
   return (
-    <div className="bg-[#10152A]/90 border border-[#C8A45D]/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm space-y-6">
+    <div className="bg-[#10152A]/90 border border-[#C8A45D]/30 rounded-2xl p-4 sm:p-6 lg:p-8 backdrop-blur-sm space-y-6">
       {/* Header */}
       <div className="border-b border-white/10 pb-5">
         <span className="text-[11px] font-mono tracking-widest uppercase text-[#C8A45D]">

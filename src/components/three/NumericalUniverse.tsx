@@ -246,9 +246,33 @@ export const NumericalUniverse: React.FC<NumericalUniverseProps> = ({
       isDragging = false;
     };
 
+    // Mobile & Tablet Touch Support
+    const handleTouchStart = (e: TouchEvent) => {
+      if (e.touches.length === 1) {
+        isDragging = true;
+        prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging || e.touches.length !== 1) return;
+      const deltaX = e.touches[0].clientX - prevMousePos.x;
+      const deltaY = e.touches[0].clientY - prevMousePos.y;
+      rotVelocityY = deltaX * 0.005;
+      rotVelocityX = deltaY * 0.005;
+      prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    };
+
+    const handleTouchEnd = () => {
+      isDragging = false;
+    };
+
     renderer.domElement.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseup', handleMouseUp);
+    renderer.domElement.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd);
 
     // Resize observer
     const resizeObserver = new ResizeObserver(() => {
@@ -338,6 +362,9 @@ export const NumericalUniverse: React.FC<NumericalUniverseProps> = ({
       renderer.domElement.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
+      renderer.domElement.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
       renderer.domElement.removeEventListener('webglcontextlost', handleContextLost);
 
       // Clean GPU memory

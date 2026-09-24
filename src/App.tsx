@@ -38,7 +38,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080A14] text-[#F7F4EC] font-sans selection:bg-[#C8A45D] selection:text-[#080A14] antialiased">
+    <div className="min-h-screen w-full overflow-x-hidden relative bg-[#080A14] text-[#F7F4EC] font-sans selection:bg-[#C8A45D] selection:text-[#080A14] antialiased">
       {/* 1. Header Navigation */}
       <TopBar
         onOpenConsultationModal={() => handleOpenBooking()}

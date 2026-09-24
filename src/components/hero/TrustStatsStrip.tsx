@@ -32,13 +32,13 @@ export const TrustStatsStrip: React.FC = () => {
   return (
     <section className="relative z-10 border-y border-[#C8A45D]/15 bg-[#080A14]/80 backdrop-blur-md py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 md:gap-8">
           {stats.map((stat, i) => {
             const Icon = stat.icon;
             return (
               <div
                 key={i}
-                className="flex flex-col items-center text-center p-3 rounded-xl border border-transparent hover:border-[#C8A45D]/15 hover:bg-[#10152A]/40 transition-colors"
+                className="flex flex-col items-center text-center p-2.5 sm:p-3 rounded-xl border border-transparent hover:border-[#C8A45D]/15 hover:bg-[#10152A]/40 transition-colors"
               >
                 <div className="w-10 h-10 rounded-full bg-[#10152A] border border-[#C8A45D]/30 flex items-center justify-center text-[#C8A45D] mb-3 shadow-inner">
                   <Icon className="w-4 h-4" />

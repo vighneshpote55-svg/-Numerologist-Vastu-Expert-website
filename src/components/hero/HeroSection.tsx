@@ -118,7 +118,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* RIGHT: Interactive 3D Numerical Universe */}
           <div className="lg:col-span-6 flex flex-col items-center justify-center">
-            <div className="w-full aspect-square max-w-[500px] h-[360px] sm:h-[460px] lg:h-[500px]">
+            <div className="w-full max-w-[500px] aspect-square min-h-[280px] max-h-[500px] flex items-center justify-center">
               <NumericalUniverse
                 activeNumber={activeNumber}
                 onSelectNumber={onSelectNumber}

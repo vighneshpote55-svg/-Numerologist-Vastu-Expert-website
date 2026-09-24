@@ -59,8 +59,8 @@ export const ToolsSection: React.FC<ToolsSectionProps> = ({ onOpenConsultationMo
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex justify-center">
-          <div className="inline-flex p-1.5 rounded-2xl bg-[#10152A] border border-[#C8A45D]/25 max-w-full overflow-x-auto gap-1">
+        <div className="flex justify-start sm:justify-center overflow-x-auto scrollbar-none pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="inline-flex p-1.5 rounded-2xl bg-[#10152A] border border-[#C8A45D]/25 shrink-0 gap-1 scrollbar-none">
             <button
               type="button"
               onClick={() => handleTabChange('name')}

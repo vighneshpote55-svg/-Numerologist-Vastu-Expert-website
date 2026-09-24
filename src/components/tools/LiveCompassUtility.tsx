@@ -102,7 +102,7 @@ export const LiveCompassUtility: React.FC<LiveCompassUtilityProps> = ({
   }, []);
 
   return (
-    <div className="bg-[#10152A]/90 border border-[#C8A45D]/30 rounded-2xl p-6 sm:p-8 backdrop-blur-sm space-y-6">
+    <div className="bg-[#10152A]/90 border border-[#C8A45D]/30 rounded-2xl p-4 sm:p-6 lg:p-8 backdrop-blur-sm space-y-6">
       {/* Header */}
       <div className="border-b border-white/10 pb-5">
         <span className="text-[11px] font-mono tracking-widest uppercase text-[#C8A45D]">
@@ -155,7 +155,7 @@ export const LiveCompassUtility: React.FC<LiveCompassUtilityProps> = ({
         
         {/* Animated Compass Rose Dial */}
         <div className="md:col-span-6 flex flex-col items-center justify-center">
-          <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full border-2 border-[#C8A45D]/40 bg-[#080A14] flex items-center justify-center shadow-[0_0_50px_rgba(200,164,93,0.15)]">
+          <div className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full border-2 border-[#C8A45D]/40 bg-[#080A14] flex items-center justify-center shadow-[0_0_50px_rgba(200,164,93,0.15)] shrink-0">
             
             {/* Compass Outer Markings */}
             <div

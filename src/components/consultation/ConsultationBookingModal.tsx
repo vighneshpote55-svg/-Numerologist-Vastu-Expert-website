@@ -33,18 +33,18 @@ export const ConsultationBookingModal: React.FC<ConsultationBookingModalProps> =
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-black/85 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={e => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto bg-[#10152A] border border-[#C8A45D]/40 rounded-2xl p-6 sm:p-8 shadow-[0_20px_70px_rgba(0,0,0,0.9)] animate-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-2xl max-h-[95vh] sm:max-h-[92vh] overflow-y-auto bg-[#10152A] border border-[#C8A45D]/40 rounded-2xl p-4 sm:p-7 md:p-8 shadow-[0_20px_70px_rgba(0,0,0,0.9)] animate-in zoom-in-95 duration-200">
         
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-[#9EA3B5] hover:text-[#F7F4EC] hover:bg-white/5 transition-colors cursor-pointer"
+          className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 p-2 rounded-full text-[#9EA3B5] hover:text-[#F7F4EC] hover:bg-white/5 transition-colors cursor-pointer"
           aria-label="Close booking modal"
         >
           <X className="w-5 h-5" />

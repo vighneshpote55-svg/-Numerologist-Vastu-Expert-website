@@ -38,12 +38,12 @@ export const ReportGeneratorModal: React.FC<ReportGeneratorModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
       onClick={e => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto bg-[#10152A] border border-[#C8A45D]/50 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+      <div className="relative w-full max-w-3xl max-h-[96vh] sm:max-h-[92vh] overflow-y-auto bg-[#10152A] border border-[#C8A45D]/50 rounded-2xl p-4 sm:p-7 md:p-8 shadow-2xl space-y-6">
         
         {/* Action Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4 print:hidden">

@@ -55,11 +55,11 @@ export const LeadManagerModal: React.FC<LeadManagerModalProps> = ({ isOpen, onCl
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
-      <div className="relative w-full max-w-5xl max-h-[90vh] bg-[#10152A] border border-[#C8A45D]/40 rounded-2xl flex flex-col overflow-hidden shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-black/85 backdrop-blur-sm">
+      <div className="relative w-full max-w-5xl max-h-[96vh] sm:max-h-[90vh] bg-[#10152A] border border-[#C8A45D]/40 rounded-2xl flex flex-col overflow-hidden shadow-2xl">
         
         {/* Modal Top Bar */}
-        <div className="p-6 border-b border-white/10 flex items-center justify-between bg-[#080A14]">
+        <div className="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between bg-[#080A14]">
           <div>
             <span className="text-[10px] font-mono tracking-widest uppercase text-[#C8A45D]">
               Internal Desk Console

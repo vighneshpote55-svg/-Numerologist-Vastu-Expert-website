@@ -233,7 +233,7 @@ export const Footer: React.FC<FooterProps> = ({
             © {new Date().getFullYear()} Archanna Nirrmale. All rights reserved.
           </div>
 
-          <div className="flex items-center gap-4 text-[11px]">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2.5 sm:gap-4 text-[11px]">
             <span>15+ Years Experience</span>
             <span>·</span>
             <span>500+ Clients Guided</span>

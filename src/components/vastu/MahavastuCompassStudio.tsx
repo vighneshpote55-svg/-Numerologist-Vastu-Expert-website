@@ -251,19 +251,19 @@ export const MahavastuCompassStudio: React.FC<MahavastuCompassStudioProps> = ({
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
               {/* 3D Canvas */}
               <div className="lg:col-span-6 flex flex-col items-center justify-center">
-                <div className="w-full aspect-square max-w-[400px] h-[320px] sm:h-[380px] rounded-2xl bg-[#080A14] border border-[#C8A45D]/25 p-2 shadow-2xl relative">
+                <div className="w-full max-w-[400px] aspect-square rounded-2xl bg-[#080A14] border border-[#C8A45D]/25 p-2 shadow-2xl relative flex items-center justify-center">
                   <VastuCompass3D
                     selectedZone={selected8Zone}
                     onSelectZone={setSelected8Zone}
                   />
                 </div>
                 <span className="text-[11px] text-[#9EA3B5] font-mono mt-2">
-                  Interactive WebGL Mandala · Drag to rotate orientation
+                  Interactive WebGL Mandala · Tap zone to inspect
                 </span>
               </div>
 
               {/* Direction Breakdown */}
-              <div className="lg:col-span-6 space-y-4 p-6 rounded-2xl bg-[#10152A]/90 border border-[#C8A45D]/30 shadow-xl">
+              <div className="lg:col-span-6 space-y-4 p-4 sm:p-6 rounded-2xl bg-[#10152A]/90 border border-[#C8A45D]/30 shadow-xl">
                 <div className="flex items-center justify-between border-b border-white/10 pb-3">
                   <div>
                     <span className="text-xs font-mono text-[#C8A45D] font-bold uppercase tracking-wider">
