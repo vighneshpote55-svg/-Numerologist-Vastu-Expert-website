@@ -25,13 +25,15 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '', showLa
       onClick={handleToggle}
       aria-label={`Switch to ${isLight ? 'Dark' : 'High-Contrast Light'} mode`}
       title={`Switch to ${isLight ? 'Dark' : 'High-Contrast Light'} mode`}
-      className={`relative inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all cursor-pointer text-xs font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A45D] ${
+      className={`relative inline-flex items-center shrink-0 rounded-lg border transition-all cursor-pointer text-xs font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A45D] active:scale-95 ${
+        showLabel ? 'gap-2 px-3 py-1.5' : 'w-9 h-9 justify-center'
+      } ${
         isLight
           ? 'bg-amber-100 hover:bg-amber-200 border-amber-300 text-amber-950 shadow-sm'
           : 'bg-[#10152A] hover:bg-[#161e38] border-[#C8A45D]/30 hover:border-[#C8A45D] text-[#E8D5A8]'
       } ${className}`}
     >
-      <div className="relative w-4 h-4 flex items-center justify-center">
+      <div className="relative w-4 h-4 flex items-center justify-center shrink-0">
         {isLight ? (
           <Sun className="w-4 h-4 text-amber-600 animate-in fade-in zoom-in duration-200" />
         ) : (
@@ -39,13 +41,9 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '', showLa
         )}
       </div>
 
-      {showLabel ? (
-        <span className="font-mono text-[11px] tracking-wide">
+      {showLabel && (
+        <span className="font-mono text-[11px] tracking-wide whitespace-nowrap">
           {isLight ? 'Light Mode' : 'Dark Mode'}
-        </span>
-      ) : (
-        <span className="hidden sm:inline font-mono text-[11px]">
-          {isLight ? 'Light' : 'Dark'}
         </span>
       )}
     </button>

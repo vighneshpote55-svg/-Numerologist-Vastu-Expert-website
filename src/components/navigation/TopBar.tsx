@@ -35,60 +35,62 @@ export const TopBar: React.FC<TopBarProps> = ({ onOpenConsultationModal, onOpenL
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#080A14]/90 backdrop-blur-md border-b border-[#C8A45D]/15 transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Zone 1: Single text element wordmark */}
+    <header className="sticky top-0 z-50 w-full bg-[#080A14]/95 backdrop-blur-md border-b border-[#C8A45D]/20 shadow-sm transition-all">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3 lg:gap-4 xl:gap-6">
+        {/* Zone 1: Single text element wordmark with fixed layout to prevent multi-line wrap */}
         <a
           href="#"
-          className="group flex flex-col focus:outline-none"
-          title="Archanna Nirrmale – Home"
+          className="group flex flex-col justify-center shrink-0 focus:outline-none focus-visible:ring-1 focus-visible:ring-[#C8A45D] rounded py-1"
+          title="Archanna Nirrmale – Certified Numerologist & Vastu Expert"
         >
-          <span className="font-serif text-xl sm:text-2xl tracking-[0.18em] text-[#F7F4EC] group-hover:text-[#E8D5A8] transition-colors uppercase font-medium">
+          <span className="font-serif text-lg sm:text-xl lg:text-2xl tracking-[0.14em] sm:tracking-[0.18em] text-[#F7F4EC] group-hover:text-[#E8D5A8] transition-colors uppercase font-medium leading-none whitespace-nowrap block">
             Archanna Nirrmale
           </span>
-          <span className="text-[10px] tracking-[0.25em] text-[#C8A45D] uppercase font-sans">
+          <span className="text-[9px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.24em] text-[#C8A45D] uppercase font-sans font-medium whitespace-nowrap block mt-1">
             Certified Numerologist & Vastu Expert
           </span>
         </a>
 
-        {/* Zone 2: 4–6 clean text navigation links */}
-        <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#9EA3B5]">
+        {/* Zone 2: Clean navigation links with responsive gaps and no line-wrapping */}
+        <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-7 text-[13px] xl:text-sm font-medium text-[#9EA3B5] shrink-0">
           {navLinks.map(link => (
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-[#F7F4EC] transition-colors relative py-1 focus-visible:outline-none focus-visible:text-[#C8A45D]"
+              className="hover:text-[#F7F4EC] transition-colors relative py-1 focus-visible:outline-none focus-visible:text-[#C8A45D] whitespace-nowrap group"
             >
-              {link.label}
+              <span>{link.label}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#C8A45D] to-[#E8D5A8] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
 
-        {/* Zone 3: 1–2 primary actions */}
-        <div className="flex items-center gap-3">
-          {/* Quick Call */}
+        {/* Zone 3: Actions & CTAs with shrink-0 and clean responsiveness */}
+        <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 shrink-0">
+          {/* Quick Call - Shown on large desktop */}
           <a
             href="tel:+919011023754"
             onClick={() => trackEvent('phone_click', { source: 'topbar' })}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-[#E8D5A8] hover:text-white border border-[#C8A45D]/25 hover:border-[#C8A45D]/60 rounded-md transition-colors whitespace-nowrap"
+            className="hidden xl:flex items-center gap-1.5 px-2.5 2xl:px-3 py-1.5 text-xs font-medium text-[#E8D5A8] hover:text-white border border-[#C8A45D]/25 hover:border-[#C8A45D]/60 rounded-lg transition-colors whitespace-nowrap shrink-0 hover:bg-[#10152A]"
             title="Call +91 9011023754"
           >
-            <Phone className="w-3.5 h-3.5 text-[#C8A45D]" />
+            <Phone className="w-3.5 h-3.5 text-[#C8A45D] shrink-0" />
             <span className="font-mono text-xs">9011023754</span>
           </a>
 
-          {/* Secondary Conversion: WhatsApp Now */}
+          {/* Secondary Conversion: WhatsApp Direct */}
           <button
             type="button"
             onClick={handleWhatsApp}
-            className="hidden md:flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-[#080A14] bg-[#25D366] hover:bg-[#20ba5a] rounded-md transition-colors whitespace-nowrap shadow-sm cursor-pointer"
+            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#080A14] bg-[#25D366] hover:bg-[#20ba5a] rounded-lg transition-all whitespace-nowrap shadow-sm cursor-pointer shrink-0 active:scale-95"
             title="Chat directly on WhatsApp"
           >
-            <WhatsAppIcon className="w-3.5 h-3.5" />
-            <span>WhatsApp Now</span>
+            <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
+            <span className="hidden 2xl:inline">WhatsApp Now</span>
+            <span className="inline 2xl:hidden">WhatsApp</span>
           </button>
 
-          {/* Theme Toggle: Dark / High-Contrast Light */}
+          {/* Theme Toggle: Dark / Light */}
           <ThemeToggle />
 
           {/* Primary Conversion: Book A Consultation */}
@@ -98,9 +100,9 @@ export const TopBar: React.FC<TopBarProps> = ({ onOpenConsultationModal, onOpenL
               trackEvent('consultation_cta_click', { source: 'topbar' });
               onOpenConsultationModal();
             }}
-            className="flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-medium text-[#080A14] bg-gradient-to-r from-[#C8A45D] to-[#E8D5A8] hover:from-[#d5b36e] hover:to-[#f0e0b9] rounded-md transition-all shadow-[0_0_15px_rgba(200,164,93,0.25)] whitespace-nowrap cursor-pointer active:scale-95"
+            className="flex items-center gap-1.5 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-[#080A14] bg-gradient-to-r from-[#C8A45D] to-[#E8D5A8] hover:from-[#d5b36e] hover:to-[#f0e0b9] rounded-lg transition-all shadow-[0_0_15px_rgba(200,164,93,0.25)] hover:shadow-[0_0_20px_rgba(200,164,93,0.4)] whitespace-nowrap cursor-pointer active:scale-95 shrink-0"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#080A14]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#080A14] shrink-0" />
             <span>Book Consultation</span>
           </button>
 
@@ -108,7 +110,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onOpenConsultationModal, onOpenL
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#E8D5A8] hover:text-white focus:outline-none"
+            className="lg:hidden p-2 text-[#E8D5A8] hover:text-white rounded-lg hover:bg-white/5 transition-colors focus:outline-none shrink-0"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
